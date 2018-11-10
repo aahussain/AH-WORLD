@@ -12,29 +12,32 @@ http://landoflinux.com/linux_package_management_zypper.html
 http://landoflinux.com/linux_package_management_zypper.html
 
 *** $ host google.com | rev
+
 $ systemctl get-default
 $ sudo systemctl set-default multi-user.target
 $ sudo systemctl set-default graphical.target
+
+$ sudo systemctl list-unit-files --type=service --all
+$ sudo systemctl list-unit-files --type=service
+
+$ sudo systemctl is-active / is-enabled / status / start / restart / stop / enable / disable sshd / network / firewalld
+$ systemctl shutdown
+$ systemctl reboot
+
+$service sshd status
+
 $ /usr/sbin/hwinfo  --short --cpu
 $ /usr/sbin/hwinfo  --cpu
 $ /usr/sbin/hwinfo  --memory
 $ /usr/sbin/hwinfo --short --network
 $ /usr/sbin/hwinfo --short --wlan
 $ /usr/sbin/hwinfo --short --gfxcard
+
 $ sudo lsusb
 $ sudo lspci
 $ ls -l /etc/sysconfig/
 $ sudo cat /etc/sysconfig/network/ifcfg-eth0
-$ systemctl status network
-$ sudo systemctl disable firewalld 
-$ sudo systemctl enable sshd / smb / network / firewalled / apache 
-$ systemctl status sshd 
-$ sudo systemctl start sshd 
-$ sudo systemctl restart sshd
-$ sudo systemctl stop sshd
-$ sudo systemctl disable sshd 
-$ systemctl shutdown
-$ systemctl reboot
+
 $ ip -c a
 $ ip route
 $ lsmod
@@ -45,8 +48,10 @@ Loading a kernel module.
 $ modprobe [modulename]
 Unloading a kernel module.
 $ rmmod [modulename]
+
 $ sudo hostnamectl set-hostname vl-Akthar-Suse
 $ hostnamectl
+
 $ zypper --help   http://landoflinux.com/linux_package_management_zypper.html
 $ zypper repos
 $ zypper list-updates
@@ -60,5 +65,5 @@ $ sudo zypper remove htop
 $ sudo zypper install screen
 $ sudo /usr/sbin/yast -i screen
 $ sudo /usr/sbin/yast -i ansible
-$  rpm -qa --last 
+$ rpm -qa --last 
 $ rpm -qa | grep ansible 
