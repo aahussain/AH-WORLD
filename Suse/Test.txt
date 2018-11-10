@@ -1,0 +1,7 @@
+Git:
+
+git clone https://github.com/aahussain/AH-HOME.git
+
+
+Linux:
+ 
