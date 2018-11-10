@@ -1,0 +1,3 @@
+
+https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
+https://www.ostechnix.com/some-good-alternatives-to-du-command/
