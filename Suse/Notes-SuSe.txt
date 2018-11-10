@@ -1,6 +1,9 @@
 Linux 
 https://github.com/robbyrussell/oh-my-zsh
 https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
+
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+
 https://www.ostechnix.com/some-good-alternatives-to-du-command/
 
 find . -type f | grep -i "\.git" 
