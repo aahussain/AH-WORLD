@@ -1,0 +1,7 @@
+
+
+https://git-scm.com/docs
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+find . -type f | grep -i "\.git" 
+find . -type f | grep -i "\.git" | xargs rm
