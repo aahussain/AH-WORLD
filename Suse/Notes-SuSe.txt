@@ -1,3 +1,7 @@
+Linux 
+https://github.com/robbyrussell/oh-my-zsh
+https://github.com/robbyrussell/oh-my-zsh/wiki/Installing-ZSH
+https://www.ostechnix.com/some-good-alternatives-to-du-command/
 
 SuSe
 https://www.suse.com/documentation/sles11/pdfdoc/book_sle_admin/book_sle_admin.pdf
