@@ -1,6 +1,6 @@
 
 Git:
-
+git clone -b BackUp git://github.com/aahussain/AH-HOME.git
 git clone https://github.com/aahussain/AH-HOME.git
 
 
