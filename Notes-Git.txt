@@ -1,0 +1,79 @@
+
+https://gitforwindows.org/index.html  # Windows Downloader / tools #
+https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud  #  Learn Git Good One 
+
+https://git-scm.com/docs
+https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+find . -type f | grep -i "\.git" 
+find . -type f | grep -i "\.git" | xargs rm
+
+For Auto login over SSH:
+https://help.github.com/articles/generating-ssh-keys#platform-linux
+Server-01
+$cd ~/.ssh
+$ssh-keygen -t rsa -C "your_email@example.com"
+$ssh-add ~/.ssh/id_rsa
+
+At server - 02 :
+$mkdir .ssh
+$chmod 700 .ssh
+$cd .ssh; touch authorized_keys; chmod 600 authorized_keys; 
+$cat ../Server-01-id_dsa.pub >> authorized_keys
+
+#To log in using your key use the ssh command.
+$ssh -1 -v server-01 or ssh -2 -v server-01
+
+# Nice Urls For Git
+http://rogerdudler.github.io/git-guide/
+http://marklodato.github.io/visual-git-guide/index-en.html
+https://www.atlassian.com/git/tutorial/git-basics  #!overview
+https://try.github.io/levels/1/challenges/1
+http://www.vogella.com/tutorials/Git/article.html
+http://gitref.org/ 
+http://git-scm.com/doc
+http://git-scm.com/book
+https://help.github.com/articles/github-security
+https://wiki.archlinux.org/index.php/git
+
+git clone https://github.com/git/git   ( Clone git latest Version )
+
+# setup GITWEB 
+
+http://sharadchhetri.com/2013/05/31/how-to-create-own-git-server-with-gitolite-and-gitweb-in-ubuntu/
+
+For Gerrit :   http://qt-project.org/wiki/Gerrit-Introduction   
+
+The following commands enables color highlighting for Git in the console.                                   
+git config --global core.editor vi
+git config --global color.ui true
+git config --global color.status auto
+git config --global color.branch auto
+
+git config --global alias.st status
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.up rebase
+git config --global alias.ci commit
+
+git config --global alias.graph 'log --graph --oneline --decorate'
+
+# Push Notes
+
+# set default so that only the current branch is pushed 
+git config --global push.default simple
+# alternatively configure Git to push all matching branches
+# git config --global push.default matching
+
+# Avoid merge commits for pulling
+# set default so that you avoid unnecessary commits
+git config --global branch.autosetuprebase always 
+
+####  Setting the default merge tool 
+
+# setup kdiff3 as default merge tool (Linux)
+git config --global merge.tool kdiff3
+
+# to install it under Ubuntu use
+sudo apt-get install kdiff3 
+# Now typing git graph will run git log --graph --oneline --decorate. 
