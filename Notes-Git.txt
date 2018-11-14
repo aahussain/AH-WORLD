@@ -45,15 +45,13 @@ http://sharadchhetri.com/2013/05/31/how-to-create-own-git-server-with-gitolite-a
 For Gerrit :   http://qt-project.org/wiki/Gerrit-Introduction   
 
 $ git config --global user.name "Akthar Hussain"
-$ git config --global user.name
-
-$ git config user.name "Akthar Hussain"
-$ git config user.name
-
 $ git config --global user.email "aahussain@gmail.com"
+$ git config --global user.name
 $ git config --global user.email
 
+$ git config user.name "Akthar Hussain"
 $ git config user.email "aahussain@gmail.com"
+$ git config user.name
 $ git config user.email
 
 The following commands enables color highlighting for Git in the console.                                   
