@@ -25,6 +25,7 @@ $cat ../Server-01-id_dsa.pub >> authorized_keys
 $ssh -1 -v server-01 or ssh -2 -v server-01
 
 # Nice Urls For Git
+https://githowto.com/
 http://rogerdudler.github.io/git-guide/
 http://marklodato.github.io/visual-git-guide/index-en.html
 https://www.atlassian.com/git/tutorial/git-basics  #!overview
@@ -45,15 +46,13 @@ http://sharadchhetri.com/2013/05/31/how-to-create-own-git-server-with-gitolite-a
 For Gerrit :   http://qt-project.org/wiki/Gerrit-Introduction   
 
 $ git config --global user.name "Akthar Hussain"
-$ git config --global user.name
-
-$ git config user.name "Akthar Hussain"
-$ git config user.name
-
 $ git config --global user.email "aahussain@gmail.com"
+$ git config --global user.name
 $ git config --global user.email
 
+$ git config user.name "Akthar Hussain"
 $ git config user.email "aahussain@gmail.com"
+$ git config user.name
 $ git config user.email
 
 The following commands enables color highlighting for Git in the console.                                   
@@ -62,13 +61,39 @@ git config --global color.ui true
 git config --global color.status auto
 git config --global color.branch auto
 
-git config --global alias.st status
+# Common aliases - For Windows users:
+
 git config --global alias.co checkout
+git config --global alias.ci commit
+git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.up rebase
-git config --global alias.ci commit
+git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+git config --global alias.type 'cat-file -t'
+git config --global alias.dump 'cat-file -p'
 
-git config --global alias.graph 'log --graph --oneline --decorate'
+# Command aliases (optional)
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+
+alias got='git '
+alias get='git 
+
+# Online Log History 
+git log --pretty=oneline
+git log --pretty=oneline --max-count=2
+git log --pretty=oneline --since='5 minutes ago'
+git log --pretty=oneline --until='5 minutes ago'
+git log --pretty=oneline --author=akthar
+git log --pretty=oneline --all
+git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago' 
+git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
+git log --pretty=format:"%ad | %s%d [%an]" --graph --date=short
+git hist master --all
 
 # Push Notes
 
