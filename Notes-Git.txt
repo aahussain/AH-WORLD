@@ -93,6 +93,7 @@ git log --pretty=oneline --all
 git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago' 
 git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 git log --pretty=format:"%ad | %s%d [%an]" --graph --date=short
+git hist master --all
 
 # Push Notes
 
