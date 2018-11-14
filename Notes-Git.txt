@@ -95,8 +95,11 @@ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 git log --pretty=format:"%ad | %s%d [%an]" --graph --date=short
 git hist master --all
 
-#Git Large File Storage (LFS)
-https://git-lfs.github.com/
+
+# Git Large File Storage (LFS) 
+** https://www.atlassian.com/git/tutorials/git-lfs
+   https://git-lfs.github.com/
+
 git lfs install
 git lfs track "*.psd"
 git lfs track "*.vmdk"
