@@ -95,6 +95,26 @@ git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 git log --pretty=format:"%ad | %s%d [%an]" --graph --date=short
 git hist master --all
 
+#Git Large File Storage (LFS)
+https://git-lfs.github.com/
+git lfs install
+git lfs track "*.psd"
+git lfs track "*.vmdk"
+git add .gitattributes
+git add file.psd
+git commit -m "Add design file"
+git push origin master
+
+git lfs help smudge
+
+Note:-
+Known bugs
+----------
+On Windows, Git does not handle files in the working tree larger than 4
+gigabytes.
+For more information, see: https://github.com/git-lfs/git-lfs/issues/2434.
+
+
 # Push Notes
 
 # set default so that only the current branch is pushed 
