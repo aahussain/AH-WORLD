@@ -25,6 +25,7 @@ $cat ../Server-01-id_dsa.pub >> authorized_keys
 $ssh -1 -v server-01 or ssh -2 -v server-01
 
 # Nice Urls For Git
+https://githowto.com/
 http://rogerdudler.github.io/git-guide/
 http://marklodato.github.io/visual-git-guide/index-en.html
 https://www.atlassian.com/git/tutorial/git-basics  #!overview
