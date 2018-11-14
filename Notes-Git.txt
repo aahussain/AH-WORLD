@@ -55,6 +55,10 @@ $ git config user.email "aahussain@gmail.com"
 $ git config user.name
 $ git config user.email
 
+$ git log --graph --oneline --decorate
+$ git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+
+
 The following commands enables color highlighting for Git in the console.                                   
 git config --global core.editor vi
 git config --global color.ui true
