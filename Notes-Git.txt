@@ -1,9 +1,21 @@
 
+
 https://gitforwindows.org/index.html  # Windows Downloader / tools #
 https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud  #  Learn Git Good One 
-
 https://git-scm.com/docs
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+# Git URL protocols
+ssh://[user@]host.xz[:port]/path/to/repo.git/
+git://host.xz[:port]/path/to/repo.git/     # Git Port(9418)
+http[s]://host.xz[:port]/path/to/repo.git/
+
+# Configure Git
+	/etc/gitconfig - stores the configuration information for all system users and their respective repositories.
+	~/.gitconfig - stores user-specific configuration files on the system.
+	.git/config - this is the configuration file of your current working repository.
+
+$ git config --list
 
 find . -type f | grep -i "\.git" 
 find . -type f | grep -i "\.git" | xargs rm
