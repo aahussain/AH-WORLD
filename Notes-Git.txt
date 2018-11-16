@@ -84,7 +84,7 @@ git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --grap
 git config --global alias.type 'cat-file -t'
 git config --global alias.dump 'cat-file -p'
 
-# Command aliases (optional)
+# Add these in you .zshrc / .bashrc
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
@@ -93,9 +93,14 @@ alias gd='git diff'
 alias go='git checkout '
 alias gl='git log --graph --oneline --decorate --all '
 
-
-alias got='git '
-alias get='git 
+alias gs='git status '
+alias ga='git add '
+alias gb='git branch '
+alias gc='git commit'
+alias gd='git diff'
+alias go='git checkout '
+alias gl='git log --graph --oneline --decorate --all '
+alias GL='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
 git add -i
 
