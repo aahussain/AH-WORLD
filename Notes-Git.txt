@@ -1,4 +1,7 @@
 
+Note: -
+git init ~/Git/Project  ( Create only local repo, remote server can clone this but can't push )
+git init --bare ~/Git/Projects ( Create repo but no working files will have only Ref / Hist, remore server can clone this and do push / pull
 
 https://gitforwindows.org/index.html  # Windows Downloader / tools #
 https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud  #  Learn Git Good One 
@@ -103,9 +106,22 @@ alias gl='git log --graph --oneline --decorate --all '
 alias GL='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
 git add -i
-# output will be " true "  on bare repo # output will be " fase "  on non-bare repo. non-bare repo will have working copy but bare repo won't.
+# output will be " true "  on bare repo 
+# output will be " fase "  on non-bare repo. 
 git config core.bare   
 git config --bool core.bare
+
+git config receive.denyCurrentBranch ignore  # Execute this command from original server , this will enanle client to push but if you see the same file in server will show that it is deleted. Also if you enable this command only files created on server will be pusshed to client - overll resut is not usefull instead create a bare repo.
+
+# Branch and Merge 
+
+git branch copy-master     # Create a New Brance
+git checkout copy-master   # Switch over to new brance
+git add .                  # Add files 
+git commit -m "Comments"   # Just commit
+git checkout master        # switch over to master
+git merge copy.master      # Merge copy.master to > master
+git push 		   # upload the changes to remote master server ( I mean server bare repo ) 
 
 # Online Log History 
 git log --pretty=oneline
