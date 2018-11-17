@@ -103,6 +103,9 @@ alias gl='git log --graph --oneline --decorate --all '
 alias GL='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
 git add -i
+# output will be " true "  on bare repo # output will be " fase "  on non-bare repo. non-bare repo will have working copy but bare repo won't.
+git config core.bare   
+git config --bool core.bare
 
 # Online Log History 
 git log --pretty=oneline
