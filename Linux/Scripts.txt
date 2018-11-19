@@ -30,6 +30,8 @@ pidof nginx >/dev/null && echo "Service is running" || echo "Service NOT running
 ps -C httpd >/dev/null && echo "Running" || echo "Not running"
 ps -C nginx >/dev/null && echo "Running" || echo "Not running
 
+# To check a service
+
 #!/bin/bash
 SERVICE="nginx"
 if pgrep -x "$SERVICE" >/dev/null
@@ -41,3 +43,28 @@ else
     # systemctl start nginx
     # mail  
 fi
+
+# To check home folder / user id ..etc 
+#!/bin/bash
+# set var 
+AUTOHOME_FILE=/etc/auto.home
+
+# get user name
+read -p "Enter a user name : " username
+
+# try to locate username in in /etc/passwd 
+# 
+grep "^$username" $AUTOHOME_FILE > /dev/null
+
+# store exit status of grep
+# if found grep will return 0 exit stauts
+# if not found, grep will return a nonzero exit stauts
+status=$?
+
+if test $status -eq 0
+then
+	echo "User '$username' found in $AUTOHOME_FILE file."
+else
+	echo "User '$username' not found in $AUTOHOME_FILE file."
+fi
+
