@@ -1,9 +1,24 @@
 
+Note: -
+git init ~/Git/Project  ( Create only local repo, remote server can clone this but can't push )
+git init --bare ~/Git/Projects ( Create repo but no working files will have only Ref / Hist, remore server can clone this and do push / pull
+
 https://gitforwindows.org/index.html  # Windows Downloader / tools #
 https://www.atlassian.com/git/tutorials/learn-git-with-bitbucket-cloud  #  Learn Git Good One 
-
 https://git-scm.com/docs
 https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
+
+# Git URL protocols
+ssh://[user@]host.xz[:port]/path/to/repo.git/
+git://host.xz[:port]/path/to/repo.git/     # Git Port(9418)
+http[s]://host.xz[:port]/path/to/repo.git/
+
+# Configure Git
+	/etc/gitconfig - stores the configuration information for all system users and their respective repositories.
+	~/.gitconfig - stores user-specific configuration files on the system.
+	.git/config - this is the configuration file of your current working repository.
+
+$ git config --list
 
 find . -type f | grep -i "\.git" 
 find . -type f | grep -i "\.git" | xargs rm
@@ -68,20 +83,37 @@ git config --global alias.ci commit
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.up rebase
-git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+git config --global alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
 git config --global alias.type 'cat-file -t'
 git config --global alias.dump 'cat-file -p'
 
-# Command aliases (optional)
+# Add these in you .zshrc / .bashrc
 alias gs='git status '
 alias ga='git add '
 alias gb='git branch '
 alias gc='git commit'
 alias gd='git diff'
 alias go='git checkout '
+alias gl='git log --graph --oneline --decorate --all '
+alias GL='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
-alias got='git '
-alias get='git 
+git add -i
+# output will be " true "  on bare repo 
+# output will be " fase "  on non-bare repo. 
+git config core.bare   
+git config --bool core.bare
+
+git config receive.denyCurrentBranch ignore  # Execute this command from original server , this will enanle client to push but if you see the same file in server will show that it is deleted. Also if you enable this command only files created on server will be pusshed to client - overll resut is not usefull instead create a bare repo.
+
+# Branch and Merge 
+
+git branch copy-master     # Create a New Brance
+git checkout copy-master   # Switch over to new brance
+git add .                  # Add files 
+git commit -m "Comments"   # Just commit
+git checkout master        # switch over to master
+git merge copy.master      # Merge copy.master to > master
+git push 		   # upload the changes to remote master server ( I mean server bare repo ) 
 
 # Online Log History 
 git log --pretty=oneline
@@ -90,10 +122,39 @@ git log --pretty=oneline --since='5 minutes ago'
 git log --pretty=oneline --until='5 minutes ago'
 git log --pretty=oneline --author=akthar
 git log --pretty=oneline --all
+
 git log --all --pretty=format:"%h %cd %s (%an)" --since='7 days ago' 
 git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 git log --pretty=format:"%ad | %s%d [%an]" --graph --date=short
+
+git log --graph --oneline --decorate --all
+git log --name-status
+git log --author=akthar
 git hist master --all
+
+
+
+# Git Large File Storage (LFS) 
+** https://www.atlassian.com/git/tutorials/git-lfs
+   https://git-lfs.github.com/
+
+git lfs install
+git lfs track "*.psd"
+git lfs track "*.vmdk"
+git add .gitattributes
+git add file.psd
+git commit -m "Add design file"
+git push origin master
+
+git lfs help smudge
+
+Note:-
+Known bugs
+----------
+On Windows, Git does not handle files in the working tree larger than 4
+gigabytes.
+For more information, see: https://github.com/git-lfs/git-lfs/issues/2434.
+
 
 # Push Notes
 
