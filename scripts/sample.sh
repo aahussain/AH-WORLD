@@ -7,3 +7,8 @@ echo "i am $remark too!"
 echo "Do you go to school tomorrow?"
 read remark
 echo "Have a Good Day and Enjoy"
+
+###################
+## pidof example ##
+###################
+pidof sshd>/dev/null && echo "Service is running" || echo "Service NOT running"
