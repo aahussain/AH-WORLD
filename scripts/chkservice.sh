@@ -6,6 +6,6 @@ then
 else
     echo "$SERVICE stopped"
     # uncomment to start sshd if stopped
-    # systemctl start sshd
+     systemctl start sshd
     # mail  
 fi
