@@ -1,6 +1,6 @@
 
-https://bash.cyberciti.biz/guide/Main_Page 
-
+https://bash.cyberciti.biz/guide/Main_Page
+https://bash.cyberciti.biz/guide/Debug_a_script
 To print ? variable use the echo command:
 pgrep -x mysqld
 echo $?
@@ -41,19 +41,19 @@ else
     echo "$SERVICE stopped"
     # uncomment to start nginx if stopped
     # systemctl start nginx
-    # mail  
+    # mail
 fi
 
-# To check home folder / user id ..etc 
+# To check home folder / user id ..etc
 #!/bin/bash
-# set var 
+# set var
 AUTOHOME_FILE=/etc/auto.home
 
 # get user name
 read -p "Enter a user name : " username
 
-# try to locate username in in /etc/passwd 
-# 
+# try to locate username in in /etc/passwd
+#
 grep "^$username" $AUTOHOME_FILE > /dev/null
 
 # store exit status of grep
@@ -67,4 +67,3 @@ then
 else
 	echo "User '$username' not found in $AUTOHOME_FILE file."
 fi
-
