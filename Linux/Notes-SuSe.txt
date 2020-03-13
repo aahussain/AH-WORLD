@@ -1,3 +1,6 @@
+Java:
+
+sudo update-alternatives --config java
 
 Git:
 git clone -b BackUp https://github.com/aahussain/AH-WORLD.git
