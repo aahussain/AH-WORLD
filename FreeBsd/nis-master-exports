@@ -1,0 +1,3 @@
+/cdrom -alldirs,quiet,ro -network 192.168.1.0 -mask 255.255.255.0
+/usr/ports -alldirs,quiet,ro -network 192.168.1.0 -mask 255.255.255.0
+/exports -alldirs -maproot=root:wheel -network 192.168.1.0/24
