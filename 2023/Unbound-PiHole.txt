@@ -1,0 +1,40 @@
+sudo lsof -i -n -P
+sudo find /var/ -newermt "-1 minute" -ls
+
+
+## Setting up Pi-hole as a recursive DNS server solution
+
+https://docs.pi-hole.net/guides/dns/unbound/
+
+sudo apt info unbound
+sudo apt install unbound
+wget https://www.internic.net/domain/named.root -qO- | sudo tee /var/lib/unbound/root.hints
+
+/etc/unbound/unbound.conf.d/pi-hole.conf
+Add from https://docs.pi-hole.net/guides/dns/unbound/ 
+
+# also add the follwing. 
+
+    access-control: 192.168.29.0/24 allow
+    access-control: 127.0.0.1/24 allow
+
+sudo unbound-checkconf
+echo "net.core.rmem_max= 8388608" >> /etc/sysctl.conf
+sudo sysctl -p
+
+
+sudo systemctl disable systemd-resolved --now
+sudo service unbound start 
+sudo service unbound status
+
+dig pi-hole.net @192.168.29.2 -p 5335
+
+
+Test validation¶
+You can test DNSSEC validation using
+
+dig fail01.dnssec.works @192.168.29.2 -p 53
+dig dnssec.works @192.168.29.2 -p 53
+The first command should give a status report of SERVFAIL and no IP address. The second should give NOERROR plus an IP address.
+
+ host cnn.com. 192.168.29.2

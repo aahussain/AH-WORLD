@@ -1,0 +1,7 @@
+
+$ sudo apt update
+$ sudo apt install tasksel
+$ tasksel --list-tasks
+$ sudo tasksel install ubuntu-desktop
+$ sudo systemctl isolate graphical
+$ sudo systemctl set-default graphical.target
